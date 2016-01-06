@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="shopInfoViewControoler">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRM-Vf-ec8">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <state key="normal" title="返回"/>
+                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="177" y="16" width="46" height="30"/>
+                    </variation>
+                    <connections>
+                        <action selector="back:" destination="-1" eventType="touchUpInside" id="EvV-Nq-2yk"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCq-3k-W6O">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <state key="normal" title="获取分类列表"/>
+                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="8" y="54" width="113" height="30"/>
+                    </variation>
+                    <connections>
+                        <action selector="get_cat_list:" destination="-1" eventType="touchUpInside" id="3W8-S6-idj"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="nRM-Vf-ec8"/>
+                    <exclude reference="rCq-3k-W6O"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="nRM-Vf-ec8"/>
+                    <include reference="rCq-3k-W6O"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="532" y="249"/>
+        </view>
+    </objects>
+</document>
