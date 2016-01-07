@@ -32,6 +32,7 @@
 		D76671491C3E2FCF001FF93B /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = D76671421C3E2FCF001FF93B /* MJRefreshConst.m */; };
 		D766714A1C3E2FCF001FF93B /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76671441C3E2FCF001FF93B /* MJRefreshFooterView.m */; };
 		D766714B1C3E2FCF001FF93B /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76671461C3E2FCF001FF93B /* MJRefreshHeaderView.m */; };
+		D766714E1C3E4AC8001FF93B /* NaviBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D766714D1C3E4AC8001FF93B /* NaviBase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,8 @@
 		D76671441C3E2FCF001FF93B /* MJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooterView.m; sourceTree = "<group>"; };
 		D76671451C3E2FCF001FF93B /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeaderView.h; sourceTree = "<group>"; };
 		D76671461C3E2FCF001FF93B /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeaderView.m; sourceTree = "<group>"; };
+		D766714C1C3E4AC8001FF93B /* NaviBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviBase.h; sourceTree = "<group>"; };
+		D766714D1C3E4AC8001FF93B /* NaviBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviBase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +227,8 @@
 				D76671231C3E21ED001FF93B /* BuyViewController.h */,
 				D76671241C3E21ED001FF93B /* BuyViewController.m */,
 				D76671251C3E21ED001FF93B /* BuyViewController.xib */,
+				D766714C1C3E4AC8001FF93B /* NaviBase.h */,
+				D766714D1C3E4AC8001FF93B /* NaviBase.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -415,6 +420,7 @@
 				D76671381C3E2287001FF93B /* global.m in Sources */,
 				D76670E61C3E219F001FF93B /* main.m in Sources */,
 				D76671331C3E223B001FF93B /* MyOrderTopTabBar.m in Sources */,
+				D766714E1C3E4AC8001FF93B /* NaviBase.m in Sources */,
 				D766712A1C3E21ED001FF93B /* BuyTopView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

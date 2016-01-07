@@ -39,10 +39,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self.navigationController.navigationBar setBackgroundImage:[self createImageWithColor:color(255.0, 0.0, 0.0,0.0)] forBarMetrics:UIBarMetricsDefault];
     [self initView];
     //NSLog(@" -- > %f",screenH-BottomH);
 }
+
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
     //释放下拉刷新内存
@@ -184,25 +184,11 @@
     [secondPageView addSubview:tableview];
     [self.MyScrollView addSubview:secondPageView];
 }
-/**
- UIColor 转UIImage
- */
-- (UIImage*) createImageWithColor: (UIColor*) color
-{
-    CGRect rect=CGRectMake(0,0, 1, 1);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return theImage;
-}
 #pragma -- <UIScrollViewDelegate>
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     NSLog(@" -- %f",scrollView.contentOffset.y);
     if(scrollView.tag == 0){
-        [self.navigationController.navigationBar setBackgroundImage:[self createImageWithColor:color(255.0, 0.0, 0.0, scrollView.contentOffset.y/(screenH-BottomH))] forBarMetrics:UIBarMetricsDefault];
+        [self.navigationController.navigationBar setBackgroundImage:[global createImageWithColor:color(0.0,162.0,154.0, scrollView.contentOffset.y/(screenH-BottomH))] forBarMetrics:UIBarMetricsDefault];
         if(scrollView.contentOffset.y == (screenH-BottomH)){
             scrollView.scrollEnabled = NO;
         }

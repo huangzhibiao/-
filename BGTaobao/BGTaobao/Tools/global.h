@@ -28,5 +28,8 @@
  从像素px转换为ios的点阵pt
  */
 +(CGFloat)pxTopt:(CGFloat)px;
-
+/**
+ UIColor 转UIImage
+ */
++ (UIImage*) createImageWithColor: (UIColor*) color;
 @end
