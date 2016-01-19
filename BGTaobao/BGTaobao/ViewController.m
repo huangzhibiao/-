@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "BuyViewController.h"
+#import "global.h"
 
 @interface ViewController ()
 - (IBAction)TaoBaoDetailPage:(id)sender;
@@ -21,9 +22,9 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self.navigationController.navigationBar setBackgroundImage:[global createImageWithColor:color(0.0,162.0,154.0,1.0)] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (IBAction)TaoBaoDetailPage:(id)sender {

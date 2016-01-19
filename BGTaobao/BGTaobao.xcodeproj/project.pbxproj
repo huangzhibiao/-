@@ -651,6 +651,7 @@
 				D76671101C3E219F001FF93B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D76671111C3E219F001FF93B /* Build configuration list for PBXNativeTarget "BGTaobaoTests" */ = {
 			isa = XCConfigurationList;
@@ -659,6 +660,7 @@
 				D76671131C3E219F001FF93B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D76671141C3E219F001FF93B /* Build configuration list for PBXNativeTarget "BGTaobaoUITests" */ = {
 			isa = XCConfigurationList;
@@ -667,6 +669,7 @@
 				D76671161C3E219F001FF93B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

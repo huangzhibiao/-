@@ -21,7 +21,7 @@
             </objects>
             <point key="canvasLocation" x="-1913" y="437"/>
         </scene>
-        <!--View Controller-->
+        <!--高仿淘宝详情页-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -43,7 +43,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5bt-Jn-tCH"/>
+                    <navigationItem key="navigationItem" title="高仿淘宝详情页" id="5bt-Jn-tCH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

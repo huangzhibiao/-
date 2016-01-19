@@ -33,7 +33,7 @@
                                 <constraint firstAttribute="height" constant="1" id="P5A-K6-d9l"/>
                             </constraints>
                         </view>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_icon" translatesAutoresizingMaskIntoConstraints="NO" id="HCb-lF-rdk">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="commidity_collection" translatesAutoresizingMaskIntoConstraints="NO" id="HCb-lF-rdk">
                             <rect key="frame" x="344" y="17" width="18" height="18"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="18" id="v7r-16-uzc"/>
@@ -170,6 +170,6 @@
         </view>
     </objects>
     <resources>
-        <image name="right_icon" width="720" height="552"/>
+        <image name="commidity_collection" width="38" height="38"/>
     </resources>
 </document>

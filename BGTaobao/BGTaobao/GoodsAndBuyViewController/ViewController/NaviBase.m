@@ -12,6 +12,7 @@
 @interface NaviBase ()
 
 @end
+
 @implementation NaviBase
 /**
  这个方法只会在类第一次使用的时候调用
@@ -19,11 +20,16 @@
 +(void)initialize{
     [super initialize];
     UINavigationBar* NaviBar = [UINavigationBar appearance];
-    [NaviBar setBackgroundImage:[global createImageWithColor:color(0.0,162.0,154.0,0.0)] forBarMetrics:UIBarMetricsDefault];
+    [NaviBar setBackgroundImage:[global createImageWithColor:color(0.0,162.0,154.0,1.0)] forBarMetrics:UIBarMetricsDefault];
+    //设置主题字体颜色
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    dict[NSForegroundColorAttributeName] = [UIColor whiteColor];
+    [NaviBar setTitleTextAttributes:dict];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.interactivePopGestureRecognizer addTarget:self action:@selector(popGes:)];
     for(UIView* view in self.navigationBar.subviews){
         for(UIView* vi in view.subviews){
             if([vi isKindOfClass:[UIImageView class]]){
@@ -32,20 +38,12 @@
         }
     }
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+/**
+ 监听导航控制器的滑动
+ */
+-(void)popGes:(UIScreenEdgePanGestureRecognizer*)ges{
+    if ([self.NaviPopDelegate respondsToSelector:@selector(NaviPopGes:)]) {
+        [self.NaviPopDelegate NaviPopGes:ges];
+    }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

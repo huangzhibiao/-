@@ -13,14 +13,15 @@
 #import "BuyBottomView.h"
 #import "MyOrderTopTabBar.h"
 #import "MJRefresh.h"
+#import "NaviBase.h"
 
 #define TopViewH 380
 #define MiddleViewH 195
 #define BottomH 52
 #define TopTabBarH [global pxTopt:100]
+#define NaviBarH 64.0
 
-
-@interface BuyViewController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,MyOrderTopTabBarDelegate>
+@interface BuyViewController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,MyOrderTopTabBarDelegate,NaviBaseDelegate>
 
 @property(nonatomic,weak)MyOrderTopTabBar* TopTabBar;
 
@@ -30,6 +31,7 @@
 @property (weak, nonatomic) BuyBottomView* bottomView;
 @property (weak, nonatomic) UITableView* detailTableview;
 @property (weak, nonatomic)MJRefreshHeaderView* header;
+@property (assign, nonatomic)float TopViewScale;
 
 
 @end
@@ -39,17 +41,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.TopViewScale = 1.0;
+    ((NaviBase*)self.navigationController).NaviPopDelegate = self;
     [self initView];
-    //NSLog(@" -- > %f",screenH-BottomH);
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    if(self.MyScrollView.contentOffset.y<=NaviBarH){
+        [self.navigationController.navigationBar setBackgroundImage:[global createImageWithColor:color(0.0,162.0,154.0,0.0)] forBarMetrics:UIBarMetricsDefault];
+    }else{
+        [self.navigationController.navigationBar setBackgroundImage:[global createImageWithColor:color(0.0,162.0,154.0,1.0)] forBarMetrics:UIBarMetricsDefault];
+    }
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
     //释放下拉刷新内存
     [self.header free];
     [self.MyScrollView removeFromSuperview];
+    [super viewDidDisappear:animated];
 }
-
 -(UIScrollView *)MyScrollView{
     if (_MyScrollView == nil) {
         UIScrollView* scroll = [[UIScrollView alloc] init];
@@ -57,7 +68,6 @@
         scroll.delegate = self;
         scroll.frame = CGRectMake(0.0, 0.0, screenW, screenH-BottomH);
         scroll.pagingEnabled = YES;//进行分页
-        scroll.alwaysBounceVertical = YES;
         scroll.showsVerticalScrollIndicator = NO;
         scroll.tag = 0;
         [self.view addSubview:scroll];
@@ -152,7 +162,7 @@
     secondPageView.frame = CGRectMake(0, screenH - BottomH, screenW, screenH - BottomH);
     NSArray* array  = @[@"图文详情",@"宝贝评价",@"宝贝咨询"];
     MyOrderTopTabBar* tabBar = [[MyOrderTopTabBar alloc] initWithArray:array] ;
-    tabBar.frame = CGRectMake(0,64.0, screenW, TopTabBarH);
+    tabBar.frame = CGRectMake(0,NaviBarH, screenW, TopTabBarH);
     tabBar.backgroundColor = [UIColor whiteColor];
     tabBar.delegate = self;
     self.TopTabBar = tabBar;
@@ -163,7 +173,7 @@
     tableview.dataSource = self;
     tableview.delegate = self;
     tableview.tag = 1;
-    tableview.frame = CGRectMake(0, CGRectGetMaxY(tabBar.frame), screenW,secondPageView.frame.size.height - tabBar.frame.size.height-64.0);
+    tableview.frame = CGRectMake(0, CGRectGetMaxY(tabBar.frame), screenW,secondPageView.frame.size.height - tabBar.frame.size.height-NaviBarH);
     MJRefreshHeaderView* RheaderView = [MJRefreshHeaderView header];
     RheaderView.scrollView = tableview;
     self.header = RheaderView;
@@ -186,17 +196,31 @@
 }
 #pragma -- <UIScrollViewDelegate>
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    NSLog(@" -- %f",scrollView.contentOffset.y);
+    NSLog(@" --== %f",scrollView.contentOffset.y);
     if(scrollView.tag == 0){
+        if(scrollView.contentOffset.y<0){
+            if(self.TopViewScale<1.01){
+                self.TopViewScale += 0.00015f;
+                [self.topView.icon_img setTransform:CGAffineTransformScale(self.topView.icon_img.transform, self.TopViewScale, self.TopViewScale)];
+            }
+            scrollView.contentOffset = CGPointMake(0, 0);
+        }
         [self.navigationController.navigationBar setBackgroundImage:[global createImageWithColor:color(0.0,162.0,154.0, scrollView.contentOffset.y/(screenH-BottomH))] forBarMetrics:UIBarMetricsDefault];
         if(scrollView.contentOffset.y == (screenH-BottomH)){
             scrollView.scrollEnabled = NO;
-        }
+        }else if (scrollView.contentOffset.y == -NaviBarH && !scrollView.isDragging){
+            [UIView animateWithDuration:0.3 animations:^{
+                scrollView.contentOffset = CGPointMake(0, 0);
+            }];
+        }else;
     }
 }
-
 -(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
-    //NSLog(@" -- %f",scrollView.contentOffset.y);
+    NSLog(@" endd-- %f",self.TopViewScale);
+    self.TopViewScale = 1.0;
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.topView.icon_img setTransform:CGAffineTransformIdentity];//恢复原来的大小
+    }];
 }
 
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
@@ -228,5 +252,18 @@
     return 80.0;
 }
 
+#pragma -- NaviBaseDelegate
+
+-(void)NaviPopGes:(UIScreenEdgePanGestureRecognizer *)ges{
+        CGPoint point = [ges translationInView:ges.view];
+        float alpha = 0.0;
+        if((point.x<360) && (self.MyScrollView.contentOffset.y<64)){
+            alpha = point.x*0.15;
+        }else{
+            alpha = 1.0;
+        }
+        [self.navigationController.navigationBar setBackgroundImage:[global createImageWithColor:color(0.0,162.0,154.0,alpha)] forBarMetrics:UIBarMetricsDefault];
+            NSLog(@" -> %f %f",point.x,alpha);
+}
 
 @end

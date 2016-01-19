@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BuyTopView : UIView
-
+@property (weak, nonatomic) IBOutlet UIImageView *icon_img;//产品图片=
 + (instancetype)view;
 
 @end

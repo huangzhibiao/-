@@ -10,7 +10,7 @@
 #import "BGCenterLineLabel.h"
 
 @interface BuyTopView()
-@property (weak, nonatomic) IBOutlet UIImageView *icon_img;//产品图片=
+
 @property (weak, nonatomic) IBOutlet UILabel *name_lab;//产品名称
 @property (weak, nonatomic) IBOutlet UILabel *descri_lab;//产品描述
 @property (weak, nonatomic) IBOutlet UILabel *nowPrice_lab;//当前价格
