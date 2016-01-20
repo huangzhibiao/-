@@ -21,9 +21,10 @@
 #define TopTabBarH [global pxTopt:100]
 #define NaviBarH 64.0
 
-@interface BuyViewController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,MyOrderTopTabBarDelegate,NaviBaseDelegate>
+@interface BuyViewController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate,MyOrderTopTabBarDelegate>
 
 @property(nonatomic,weak)MyOrderTopTabBar* TopTabBar;
+@property(nonatomic,weak)UIView* NavBarView;
 
 @property (weak, nonatomic) UIScrollView *MyScrollView;
 @property (weak, nonatomic) BuyTopView* topView;
@@ -40,21 +41,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     self.TopViewScale = 1.0;
-    ((NaviBase*)self.navigationController).NaviPopDelegate = self;
     [self initView];
+    [self addNavBarView];//提示,要在最后添加
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    if(self.MyScrollView.contentOffset.y<=NaviBarH){
-        [self.navigationController.navigationBar setBackgroundImage:[global createImageWithColor:color(0.0,162.0,154.0,0.0)] forBarMetrics:UIBarMetricsDefault];
-    }else{
-        [self.navigationController.navigationBar setBackgroundImage:[global createImageWithColor:color(0.0,162.0,154.0,1.0)] forBarMetrics:UIBarMetricsDefault];
-    }
+/**
+ 添加导航栏背后的View
+ */
+-(void)addNavBarView{
+    UIView* view = [[UIView alloc] init];
+    self.NavBarView = view;
+    view.frame = CGRectMake(0, 0, screenW, 64.0);
+    [self.view addSubview:view];
 }
-
 -(void)viewDidDisappear:(BOOL)animated{
     //释放下拉刷新内存
     [self.header free];
@@ -204,8 +204,9 @@
                 [self.topView.icon_img setTransform:CGAffineTransformScale(self.topView.icon_img.transform, self.TopViewScale, self.TopViewScale)];
             }
             scrollView.contentOffset = CGPointMake(0, 0);
+        }else{
+            self.NavBarView.backgroundColor = color(0.0,162.0,154.0, scrollView.contentOffset.y/(screenH-BottomH));
         }
-        [self.navigationController.navigationBar setBackgroundImage:[global createImageWithColor:color(0.0,162.0,154.0, scrollView.contentOffset.y/(screenH-BottomH))] forBarMetrics:UIBarMetricsDefault];
         if(scrollView.contentOffset.y == (screenH-BottomH)){
             scrollView.scrollEnabled = NO;
         }else if (scrollView.contentOffset.y == -NaviBarH && !scrollView.isDragging){
@@ -250,20 +251,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 80.0;
-}
-
-#pragma -- NaviBaseDelegate
-
--(void)NaviPopGes:(UIScreenEdgePanGestureRecognizer *)ges{
-        CGPoint point = [ges translationInView:ges.view];
-        float alpha = 0.0;
-        if((point.x<360) && (self.MyScrollView.contentOffset.y<64)){
-            alpha = point.x*0.15;
-        }else{
-            alpha = 1.0;
-        }
-        [self.navigationController.navigationBar setBackgroundImage:[global createImageWithColor:color(0.0,162.0,154.0,alpha)] forBarMetrics:UIBarMetricsDefault];
-            NSLog(@" -> %f %f",point.x,alpha);
 }
 
 @end

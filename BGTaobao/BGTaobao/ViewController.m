@@ -19,12 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    [self.navigationController.navigationBar setBackgroundImage:[global createImageWithColor:color(0.0,162.0,154.0,1.0)] forBarMetrics:UIBarMetricsDefault];
+    UIView* view = [[UIView alloc] init];
+    view.frame = CGRectMake(0, 0, screenW, 64.0);
+    view.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:view];
 }
 
 - (IBAction)TaoBaoDetailPage:(id)sender {

@@ -8,12 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol NaviBaseDelegate <NSObject>
--(void)NaviPopGes:(UIScreenEdgePanGestureRecognizer*)ges;
-@end
-
 @interface NaviBase : UINavigationController
-
-@property(nonatomic,assign)id<NaviBaseDelegate> NaviPopDelegate;
 
 @end
