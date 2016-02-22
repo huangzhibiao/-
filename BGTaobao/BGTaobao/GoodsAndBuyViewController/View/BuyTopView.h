@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BGLRRefresh.h"
 
 @interface BuyTopView : UIView
-@property (weak, nonatomic) IBOutlet UIImageView *icon_img;//产品图片=
+//@property (weak, nonatomic) IBOutlet UIImageView *icon_img;//产品图片=
+@property (weak, nonatomic) BGLRRefresh* rightRefresh;
+@property(nonatomic,strong)NSArray* images;
 + (instancetype)view;
 
 @end

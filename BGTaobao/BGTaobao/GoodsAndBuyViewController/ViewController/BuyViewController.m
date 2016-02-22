@@ -14,6 +14,7 @@
 #import "MyOrderTopTabBar.h"
 #import "MJRefresh.h"
 #import "NaviBase.h"
+#import "BGGoodsDetailController.h"
 
 #define TopViewH 380
 #define MiddleViewH 195
@@ -32,7 +33,7 @@
 @property (weak, nonatomic) BuyBottomView* bottomView;
 @property (weak, nonatomic) UITableView* detailTableview;
 @property (weak, nonatomic)MJRefreshHeaderView* header;
-@property (assign, nonatomic)float TopViewScale;
+//@property (assign, nonatomic)float TopViewScale;
 
 
 @end
@@ -41,7 +42,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.TopViewScale = 1.0;
+    //self.TopViewScale = 1.0;
     [self initView];
     [self addNavBarView];//提示,要在最后添加
 }
@@ -55,12 +56,13 @@
     view.frame = CGRectMake(0, 0, screenW, 64.0);
     [self.view addSubview:view];
 }
--(void)viewDidDisappear:(BOOL)animated{
+
+-(void)dealloc{
     //释放下拉刷新内存
     [self.header free];
     [self.MyScrollView removeFromSuperview];
-    [super viewDidDisappear:animated];
 }
+
 -(UIScrollView *)MyScrollView{
     if (_MyScrollView == nil) {
         UIScrollView* scroll = [[UIScrollView alloc] init];
@@ -130,6 +132,12 @@
     firstPageView.frame = CGRectMake(0, 0, screenW, screenH - BottomH);
     BuyTopView* topView = [BuyTopView view];
     self.topView = topView;
+    topView.images = @[@"commidity_upimage",@"one.jpg",@"two.jpg",@"three.jpg",@"four.jpg",@"five.jpg"];//设置顶部Collectionview的图片数据
+    __weak UINavigationController* NaviController = self.navigationController;
+    self.topView.rightRefresh.block = ^{
+        BGGoodsDetailController* bggc = [[BGGoodsDetailController alloc] init];
+        [NaviController pushViewController:bggc animated:YES];
+    };
     topView.frame = CGRectMake(0,0, screenW, TopViewH);
     [firstPageView addSubview:topView];
     BuyMiddleView* middleView = [BuyMiddleView view];
@@ -160,7 +168,8 @@
     //初始化第二个页面的父亲view
     UIView* secondPageView = [[UIView alloc] init];
     secondPageView.frame = CGRectMake(0, screenH - BottomH, screenW, screenH - BottomH);
-    NSArray* array  = @[@"图文详情",@"宝贝评价",@"宝贝咨询"];
+    NSArray* array  = @[@"图文详情",@"产品参数",@"店铺推荐"];
+    //初始化顶部导航标题
     MyOrderTopTabBar* tabBar = [[MyOrderTopTabBar alloc] initWithArray:array] ;
     tabBar.frame = CGRectMake(0,NaviBarH, screenW, TopTabBarH);
     tabBar.backgroundColor = [UIColor whiteColor];
@@ -199,10 +208,10 @@
     NSLog(@" --== %f",scrollView.contentOffset.y);
     if(scrollView.tag == 0){
         if(scrollView.contentOffset.y<0){
-            if(self.TopViewScale<1.01){
-                self.TopViewScale += 0.00015f;
-                [self.topView.icon_img setTransform:CGAffineTransformScale(self.topView.icon_img.transform, self.TopViewScale, self.TopViewScale)];
-            }
+//            if(self.TopViewScale<1.01){
+//                self.TopViewScale += 0.00015f;
+//                [self.topView.icon_img setTransform:CGAffineTransformScale(self.topView.icon_img.transform, self.TopViewScale, self.TopViewScale)];
+//            }
             scrollView.contentOffset = CGPointMake(0, 0);
         }else{
             self.NavBarView.backgroundColor = color(0.0,162.0,154.0, scrollView.contentOffset.y/(screenH-BottomH));
@@ -217,11 +226,11 @@
     }
 }
 -(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
-    NSLog(@" endd-- %f",self.TopViewScale);
-    self.TopViewScale = 1.0;
-    [UIView animateWithDuration:0.5 animations:^{
-        [self.topView.icon_img setTransform:CGAffineTransformIdentity];//恢复原来的大小
-    }];
+//    NSLog(@" endd-- %f",self.TopViewScale);
+//    self.TopViewScale = 1.0;
+//    [UIView animateWithDuration:0.5 animations:^{
+//        [self.topView.icon_img setTransform:CGAffineTransformIdentity];//恢复原来的大小
+//    }];
 }
 
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
@@ -231,6 +240,7 @@
 #pragma -- MyOrderTopTabBarDelegate(顶部标题栏delegate)
 -(void)tabBar:(MyOrderTopTabBar *)tabBar didSelectIndex:(NSInteger)index{
     NSLog(@"点击了 －－－ %ld",index);
+    self.detailTableview.backgroundColor = color(random()%255, random()%255, random()%255, 1.0);
 }
 #pragma -- UITableViewDataSource
 

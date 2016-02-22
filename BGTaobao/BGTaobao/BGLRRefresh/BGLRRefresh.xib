@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="n3j-on-Q2a" customClass="BGLRRefresh">
+            <rect key="frame" x="0.0" y="0.0" width="75" height="277"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowHori" translatesAutoresizingMaskIntoConstraints="NO" id="PDa-6w-n3E">
+                    <rect key="frame" x="0.0" y="130" width="45" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="Hd7-Ty-Ew4"/>
+                        <constraint firstAttribute="width" constant="45" id="mfO-Zw-Ded"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="滑动查看图文详情" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hF-dm-Msv">
+                    <rect key="frame" x="49" y="67" width="20" height="144"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="yeW-Rs-HWu"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="PDa-6w-n3E" firstAttribute="leading" secondItem="n3j-on-Q2a" secondAttribute="leading" id="1cT-qc-vcU"/>
+                <constraint firstItem="PDa-6w-n3E" firstAttribute="centerY" secondItem="n3j-on-Q2a" secondAttribute="centerY" id="QBG-xl-HKQ"/>
+                <constraint firstItem="2hF-dm-Msv" firstAttribute="centerY" secondItem="n3j-on-Q2a" secondAttribute="centerY" id="eOp-W7-kYp"/>
+                <constraint firstItem="2hF-dm-Msv" firstAttribute="leading" secondItem="PDa-6w-n3E" secondAttribute="trailing" constant="4" id="lxF-d1-DfP"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="arrowIcon" destination="PDa-6w-n3E" id="dbl-Zp-CFo"/>
+                <outlet property="arrowText" destination="2hF-dm-Msv" id="dPz-EJ-AHc"/>
+            </connections>
+            <point key="canvasLocation" x="476.5" y="327.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrowHori" width="40" height="15"/>
+    </resources>
+</document>

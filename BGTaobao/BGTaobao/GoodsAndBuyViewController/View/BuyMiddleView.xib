@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -33,24 +33,15 @@
                                 <constraint firstAttribute="height" constant="1" id="P5A-K6-d9l"/>
                             </constraints>
                         </view>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="commidity_collection" translatesAutoresizingMaskIntoConstraints="NO" id="HCb-lF-rdk">
-                            <rect key="frame" x="344" y="17" width="18" height="18"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="18" id="v7r-16-uzc"/>
-                                <constraint firstAttribute="width" constant="18" id="zKA-JL-gsf"/>
-                            </constraints>
-                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="HCb-lF-rdk" firstAttribute="centerY" secondItem="lzB-12-3i0" secondAttribute="centerY" id="1Sk-zn-Xo2"/>
                         <constraint firstAttribute="trailing" secondItem="gpo-P7-6RO" secondAttribute="trailing" constant="13" id="4Bb-2e-3kD"/>
                         <constraint firstItem="FdK-rs-SpM" firstAttribute="leading" secondItem="lzB-12-3i0" secondAttribute="leading" constant="13" id="4aT-XH-PKK"/>
                         <constraint firstItem="sAZ-YG-aPB" firstAttribute="centerY" secondItem="lzB-12-3i0" secondAttribute="centerY" id="5lu-RI-RiQ"/>
                         <constraint firstItem="sAZ-YG-aPB" firstAttribute="leading" secondItem="FdK-rs-SpM" secondAttribute="trailing" constant="15" id="BEF-dE-lZX"/>
                         <constraint firstItem="FdK-rs-SpM" firstAttribute="centerY" secondItem="lzB-12-3i0" secondAttribute="centerY" id="LBa-kk-Ntq"/>
                         <constraint firstAttribute="height" constant="52" id="Oec-TX-48K"/>
-                        <constraint firstAttribute="trailing" secondItem="HCb-lF-rdk" secondAttribute="trailing" constant="13" id="Yu5-Vc-Td7"/>
                         <constraint firstItem="gpo-P7-6RO" firstAttribute="leading" secondItem="lzB-12-3i0" secondAttribute="leading" constant="13" id="aL0-PR-y6a"/>
                         <constraint firstAttribute="bottom" secondItem="gpo-P7-6RO" secondAttribute="bottom" id="t1Z-49-knh"/>
                     </constraints>
@@ -169,7 +160,4 @@
             <point key="canvasLocation" x="365.5" y="426.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="commidity_collection" width="38" height="38"/>
-    </resources>
 </document>

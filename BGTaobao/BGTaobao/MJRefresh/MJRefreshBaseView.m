@@ -143,7 +143,7 @@
 
 #pragma mark 监听UIScrollView的contentOffset属性
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{    
+{
     if (![MJRefreshContentOffset isEqualToString:keyPath]) return;
     
     if (!self.userInteractionEnabled || self.alpha <= 0.01 || self.hidden

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D70D18111C7AD9EA0063C31A /* BGLRRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = D70D18101C7AD9EA0063C31A /* BGLRRefresh.m */; };
+		D70D18131C7ADA0B0063C31A /* BGLRRefresh.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70D18121C7ADA0B0063C31A /* BGLRRefresh.xib */; };
+		D70D181D1C7AEC140063C31A /* BGGoodsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = D70D181B1C7AEC140063C31A /* BGGoodsDetailController.m */; };
+		D70D181E1C7AEC140063C31A /* BGGoodsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70D181C1C7AEC140063C31A /* BGGoodsDetailController.xib */; };
 		D76670E61C3E219F001FF93B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D76670E51C3E219F001FF93B /* main.m */; };
 		D76670E91C3E219F001FF93B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D76670E81C3E219F001FF93B /* AppDelegate.m */; };
 		D76670EC1C3E219F001FF93B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D76670EB1C3E219F001FF93B /* ViewController.m */; };
@@ -33,6 +37,8 @@
 		D766714A1C3E2FCF001FF93B /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76671441C3E2FCF001FF93B /* MJRefreshFooterView.m */; };
 		D766714B1C3E2FCF001FF93B /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D76671461C3E2FCF001FF93B /* MJRefreshHeaderView.m */; };
 		D766714E1C3E4AC8001FF93B /* NaviBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D766714D1C3E4AC8001FF93B /* NaviBase.m */; };
+		D77E46D41C76ECCA003DCC0A /* BGDetailViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D77E46D21C76ECCA003DCC0A /* BGDetailViewCell.m */; };
+		D77E46D51C76ECCA003DCC0A /* BGDetailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D77E46D31C76ECCA003DCC0A /* BGDetailViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D70D180F1C7AD9EA0063C31A /* BGLRRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGLRRefresh.h; sourceTree = "<group>"; };
+		D70D18101C7AD9EA0063C31A /* BGLRRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGLRRefresh.m; sourceTree = "<group>"; };
+		D70D18121C7ADA0B0063C31A /* BGLRRefresh.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGLRRefresh.xib; sourceTree = "<group>"; };
+		D70D181A1C7AEC140063C31A /* BGGoodsDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGoodsDetailController.h; sourceTree = "<group>"; };
+		D70D181B1C7AEC140063C31A /* BGGoodsDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGoodsDetailController.m; sourceTree = "<group>"; };
+		D70D181C1C7AEC140063C31A /* BGGoodsDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGGoodsDetailController.xib; sourceTree = "<group>"; };
 		D76670E11C3E219F001FF93B /* BGTaobao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BGTaobao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D76670E51C3E219F001FF93B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D76670E71C3E219F001FF93B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -101,6 +113,9 @@
 		D76671461C3E2FCF001FF93B /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeaderView.m; sourceTree = "<group>"; };
 		D766714C1C3E4AC8001FF93B /* NaviBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviBase.h; sourceTree = "<group>"; };
 		D766714D1C3E4AC8001FF93B /* NaviBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviBase.m; sourceTree = "<group>"; };
+		D77E46D11C76ECCA003DCC0A /* BGDetailViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGDetailViewCell.h; sourceTree = "<group>"; };
+		D77E46D21C76ECCA003DCC0A /* BGDetailViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGDetailViewCell.m; sourceTree = "<group>"; };
+		D77E46D31C76ECCA003DCC0A /* BGDetailViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGDetailViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +143,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D70D18161C7AEBE60063C31A /* BGGoodsDetailController */ = {
+			isa = PBXGroup;
+			children = (
+				D70D18171C7AEBE60063C31A /* controller */,
+				D70D18181C7AEBE60063C31A /* model */,
+				D70D18191C7AEBE60063C31A /* view */,
+			);
+			path = BGGoodsDetailController;
+			sourceTree = "<group>";
+		};
+		D70D18171C7AEBE60063C31A /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				D70D181A1C7AEC140063C31A /* BGGoodsDetailController.h */,
+				D70D181B1C7AEC140063C31A /* BGGoodsDetailController.m */,
+				D70D181C1C7AEC140063C31A /* BGGoodsDetailController.xib */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		D70D18181C7AEBE60063C31A /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		D70D18191C7AEBE60063C31A /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		D76670D81C3E219F001FF93B = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +200,8 @@
 		D76670E31C3E219F001FF93B /* BGTaobao */ = {
 			isa = PBXGroup;
 			children = (
+				D70D18161C7AEBE60063C31A /* BGGoodsDetailController */,
+				D782F9201C7A9680003A37E6 /* BGLRRefresh */,
 				D766713C1C3E2FCF001FF93B /* MJRefresh */,
 				D76671351C3E2271001FF93B /* Tools */,
 				D766712E1C3E223B001FF93B /* MyOrderTopTabBar */,
@@ -197,6 +248,7 @@
 		D76671171C3E21ED001FF93B /* GoodsAndBuyViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D77E46CD1C76EC66003DCC0A /* cell */,
 				D76671181C3E21ED001FF93B /* View */,
 				D76671221C3E21ED001FF93B /* ViewController */,
 			);
@@ -268,6 +320,26 @@
 				D76671461C3E2FCF001FF93B /* MJRefreshHeaderView.m */,
 			);
 			path = MJRefresh;
+			sourceTree = "<group>";
+		};
+		D77E46CD1C76EC66003DCC0A /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				D77E46D11C76ECCA003DCC0A /* BGDetailViewCell.h */,
+				D77E46D21C76ECCA003DCC0A /* BGDetailViewCell.m */,
+				D77E46D31C76ECCA003DCC0A /* BGDetailViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		D782F9201C7A9680003A37E6 /* BGLRRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				D70D180F1C7AD9EA0063C31A /* BGLRRefresh.h */,
+				D70D18101C7AD9EA0063C31A /* BGLRRefresh.m */,
+				D70D18121C7ADA0B0063C31A /* BGLRRefresh.xib */,
+			);
+			path = BGLRRefresh;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,11 +446,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D77E46D51C76ECCA003DCC0A /* BGDetailViewCell.xib in Resources */,
 				D76670F41C3E219F001FF93B /* LaunchScreen.storyboard in Resources */,
 				D76670F11C3E219F001FF93B /* Assets.xcassets in Resources */,
+				D70D181E1C7AEC140063C31A /* BGGoodsDetailController.xib in Resources */,
 				D76671271C3E21ED001FF93B /* BuyBottomView.xib in Resources */,
 				D76671291C3E21ED001FF93B /* BuyMiddleView.xib in Resources */,
 				D76670EF1C3E219F001FF93B /* Main.storyboard in Resources */,
+				D70D18131C7ADA0B0063C31A /* BGLRRefresh.xib in Resources */,
 				D766712B1C3E21ED001FF93B /* BuyTopView.xib in Resources */,
 				D76671471C3E2FCF001FF93B /* MJRefresh.bundle in Resources */,
 				D766712D1C3E21ED001FF93B /* BuyViewController.xib in Resources */,
@@ -406,17 +481,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D70D18111C7AD9EA0063C31A /* BGLRRefresh.m in Sources */,
 				D76671491C3E2FCF001FF93B /* MJRefreshConst.m in Sources */,
 				D76670EC1C3E219F001FF93B /* ViewController.m in Sources */,
 				D76670E91C3E219F001FF93B /* AppDelegate.m in Sources */,
 				D76671281C3E21ED001FF93B /* BuyMiddleView.m in Sources */,
 				D766713B1C3E23C3001FF93B /* BGCenterLineLabel.m in Sources */,
 				D76671261C3E21ED001FF93B /* BuyBottomView.m in Sources */,
+				D77E46D41C76ECCA003DCC0A /* BGDetailViewCell.m in Sources */,
 				D766714B1C3E2FCF001FF93B /* MJRefreshHeaderView.m in Sources */,
 				D766714A1C3E2FCF001FF93B /* MJRefreshFooterView.m in Sources */,
 				D76671341C3E223B001FF93B /* TabButton.m in Sources */,
 				D76671481C3E2FCF001FF93B /* MJRefreshBaseView.m in Sources */,
 				D766712C1C3E21ED001FF93B /* BuyViewController.m in Sources */,
+				D70D181D1C7AEC140063C31A /* BGGoodsDetailController.m in Sources */,
 				D76671381C3E2287001FF93B /* global.m in Sources */,
 				D76670E61C3E219F001FF93B /* main.m in Sources */,
 				D76671331C3E223B001FF93B /* MyOrderTopTabBar.m in Sources */,
