@@ -64,17 +64,17 @@
                 CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI);
                 [self.arrowIcon setTransform:transform];
             } completion:^(BOOL finished) {
-                    self.arrowText.text = @"松开查看图文详情";
-                    if(!self.scrollview.isDragging){
-                        if (!self.refreshing){
-                            self.refreshing = true;
-                            if (self.block) {
-                                self.block();
-                                 NSLog(@"跳转控制器......");
-                        }
-                    }
-                }
+                self.arrowText.text = @"松开查看图文详情";
             }];
+        if(!self.scrollview.isDragging){
+            if (!self.refreshing){
+                self.refreshing = true;
+                if (self.block) {
+                    self.block();
+                    NSLog(@"跳转控制器......");
+                }
+            }
+        }
     }else{
         [UIView animateWithDuration:0.5 animations:^{
            [self.arrowIcon setTransform:CGAffineTransformIdentity];
