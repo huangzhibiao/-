@@ -74,6 +74,16 @@
     _lastUpdateTimeLabel.text = [NSString stringWithFormat:@"最后更新：%@", time];
 }
 
+-(void)setBGRefreshHeaderPullToRefresh:(NSString *)BGRefreshHeaderPullToRefresh{
+    _BGRefreshHeaderPullToRefresh = BGRefreshHeaderPullToRefresh;
+    _statusLabel.text = BGRefreshHeaderPullToRefresh;
+}
+
+-(void)setBGRefreshHeaderReleaseToRefresh:(NSString *)BGRefreshHeaderReleaseToRefresh{
+    _BGRefreshHeaderReleaseToRefresh = BGRefreshHeaderReleaseToRefresh;
+    _statusLabel.text = BGRefreshHeaderReleaseToRefresh;
+}
+
 #pragma mark 设置状态
 - (void)setState:(MJRefreshState)state
 {
@@ -91,7 +101,7 @@
 		case MJRefreshStatePulling: // 松开可立即刷新
         {
             // 设置文字
-            _statusLabel.text = MJRefreshHeaderReleaseToRefresh;
+            _statusLabel.text = (self.BGRefreshHeaderReleaseToRefresh==nil)?MJRefreshHeaderReleaseToRefresh:self.BGRefreshHeaderReleaseToRefresh;
             // 执行动画
             [UIView animateWithDuration:MJRefreshAnimationDuration animations:^{
                 _arrowImage.transform = CGAffineTransformMakeRotation(M_PI);
@@ -105,7 +115,7 @@
 		case MJRefreshStateNormal: // 下拉可以刷新
         {
             // 设置文字
-			_statusLabel.text = MJRefreshHeaderPullToRefresh;
+            _statusLabel.text = (self.BGRefreshHeaderPullToRefresh==nil)?MJRefreshHeaderPullToRefresh:self.BGRefreshHeaderPullToRefresh;
             // 执行动画
             [UIView animateWithDuration:MJRefreshAnimationDuration animations:^{
                 _arrowImage.transform = CGAffineTransformIdentity;

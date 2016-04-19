@@ -25,6 +25,7 @@
     [self.view addSubview:view];
 }
 
+
 - (IBAction)TaoBaoDetailPage:(id)sender {
     BuyViewController* buy = [[BuyViewController alloc] init];
     [self.navigationController pushViewController:buy animated:YES];

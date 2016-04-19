@@ -32,9 +32,9 @@
 @property (weak, nonatomic) BuyMiddleView* middleView;
 @property (weak, nonatomic) BuyBottomView* bottomView;
 @property (weak, nonatomic) UITableView* detailTableview;
-@property (weak, nonatomic)MJRefreshHeaderView* header;
-//@property (assign, nonatomic)float TopViewScale;
-
+@property (weak, nonatomic) MJRefreshHeaderView* header;
+@property (weak, nonatomic) MJRefreshHeaderView* BGTopHeader;
+@property (weak, nonatomic) UIView* suggestView;
 
 @end
 
@@ -42,10 +42,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //self.TopViewScale = 1.0;
     [self initView];
     [self addNavBarView];//提示,要在最后添加
 }
+
 
 /**
  添加导航栏背后的View
@@ -60,6 +60,7 @@
 -(void)dealloc{
     //释放下拉刷新内存
     [self.header free];
+    [self.BGTopHeader free];
     [self.MyScrollView removeFromSuperview];
 }
 
@@ -67,15 +68,29 @@
     if (_MyScrollView == nil) {
         UIScrollView* scroll = [[UIScrollView alloc] init];
         _MyScrollView = scroll;
+        MJRefreshHeaderView* TheaderView = [MJRefreshHeaderView header];
+        self.BGTopHeader = TheaderView;
+        TheaderView.scrollView = scroll;
+        TheaderView.BGRefreshHeaderPullToRefresh = @"下拉查看更多精彩";
+        TheaderView.BGRefreshHeaderReleaseToRefresh = @"释放查看更多精彩";
+        TheaderView.beginRefreshingBlock = ^(MJRefreshBaseView* refreshView){
+            NSLog(@"弹出商品推荐.....");
+            [self.BGTopHeader endRefreshing];
+        };
+
         scroll.delegate = self;
         scroll.frame = CGRectMake(0.0, 0.0, screenW, screenH-BottomH);
         scroll.pagingEnabled = YES;//进行分页
         scroll.showsVerticalScrollIndicator = NO;
+        scroll.alwaysBounceVertical = YES;
         scroll.tag = 0;
         [self.view addSubview:scroll];
     }
     return _MyScrollView;
 }
+/**
+  初始化弹出推荐商品的view
+ */
 /**
  添加底部购买按钮和加入购物车按钮的view
  */
@@ -205,17 +220,12 @@
 }
 #pragma -- <UIScrollViewDelegate>
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    NSLog(@" --== %f",scrollView.contentOffset.y);
+    //NSLog(@" --== %f",scrollView.contentOffset.y);
     if(scrollView.tag == 0){
-        if(scrollView.contentOffset.y<0){
-//            if(self.TopViewScale<1.01){
-//                self.TopViewScale += 0.00015f;
-//                [self.topView.icon_img setTransform:CGAffineTransformScale(self.topView.icon_img.transform, self.TopViewScale, self.TopViewScale)];
-//            }
-            scrollView.contentOffset = CGPointMake(0, 0);
-        }else{
+        if(scrollView.contentOffset.y >= 0){
             self.NavBarView.backgroundColor = color(0.0,162.0,154.0, scrollView.contentOffset.y/(screenH-BottomH));
         }
+        
         if(scrollView.contentOffset.y == (screenH-BottomH)){
             scrollView.scrollEnabled = NO;
         }else if (scrollView.contentOffset.y == -NaviBarH && !scrollView.isDragging){
@@ -227,10 +237,6 @@
 }
 -(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
 //    NSLog(@" endd-- %f",self.TopViewScale);
-//    self.TopViewScale = 1.0;
-//    [UIView animateWithDuration:0.5 animations:^{
-//        [self.topView.icon_img setTransform:CGAffineTransformIdentity];//恢复原来的大小
-//    }];
 }
 
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{

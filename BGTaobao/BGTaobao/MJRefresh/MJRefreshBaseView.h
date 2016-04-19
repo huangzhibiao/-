@@ -85,7 +85,6 @@ typedef void (^RefreshStateChangeBlock)(MJRefreshBaseView *refreshView, MJRefres
 @property (nonatomic, copy) EndRefreshingBlock endStateChangeBlock;
 // 代理
 @property (nonatomic, weak) id<MJRefreshBaseViewDelegate> delegate;
-
 // 是否正在刷新
 @property (nonatomic, readonly, getter=isRefreshing) BOOL refreshing;
 // 开始刷新

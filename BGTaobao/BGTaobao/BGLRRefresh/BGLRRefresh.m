@@ -60,12 +60,14 @@
     
     if (![@"contentOffset" isEqualToString:keyPath])return;
     if (self.scrollview.contentOffset.x > (self.SizeWidth+BGLRRefreshViewW)) {
+        if ([self.arrowText.text isEqualToString:@"滑动查看图文详情"]){
             [UIView animateWithDuration:0.5 animations:^{
                 CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI);
                 [self.arrowIcon setTransform:transform];
             } completion:^(BOOL finished) {
                 self.arrowText.text = @"松开查看图文详情";
             }];
+        }
         if(!self.scrollview.isDragging){
             if (!self.refreshing){
                 self.refreshing = true;
@@ -76,9 +78,12 @@
             }
         }
     }else{
+        if ([self.arrowText.text isEqualToString:@"滑动查看图文详情"])return;
+        
         [UIView animateWithDuration:0.5 animations:^{
            [self.arrowIcon setTransform:CGAffineTransformIdentity];
         } completion:^(BOOL finished) {
+            NSLog(@"滑动查看图文详情");
             self.arrowText.text = @"滑动查看图文详情";
             self.refreshing = false;
         }];

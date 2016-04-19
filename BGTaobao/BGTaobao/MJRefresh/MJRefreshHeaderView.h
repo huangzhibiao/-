@@ -9,5 +9,8 @@
 #import "MJRefreshBaseView.h"
 
 @interface MJRefreshHeaderView : MJRefreshBaseView
+//显示字符
+@property (nonatomic, copy)NSString* BGRefreshHeaderPullToRefresh;
+@property (nonatomic, copy)NSString* BGRefreshHeaderReleaseToRefresh;
 + (instancetype)header;
 @end
