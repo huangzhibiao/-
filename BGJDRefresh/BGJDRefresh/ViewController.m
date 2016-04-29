@@ -42,8 +42,8 @@
     refresh.endBlock = ^{
         NSLog(@"结束刷新....");
     };
-    refresh.isAutoEnd = YES;//设为自动结束刷新
-    refresh.refreshTime = 2.0;//设置自动刷新时间(秒为单位)
+    refresh.isAutoEnd = YES;//设为自动结束刷新 YES/NO 自动/手动
+    refresh.refreshTime = 2.0;//设置自动刷新时间(秒为单位) 手动结束刷新时不设置此项
     refresh.scrollview = tableview;
     
     [self.view addSubview:tableview];

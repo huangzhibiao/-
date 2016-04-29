@@ -58,6 +58,7 @@ typedef enum {
 -(void)setScrollview:(UIScrollView *)scrollview{
     _scrollview = scrollview;
     _scrollViewInitInset = scrollview.contentInset;
+    _header.frame = CGRectMake(0.0,0.0,screenW,BGRefreshViewH);
     self.frame = CGRectMake(0.0,-BGRefreshViewH,screenW,BGRefreshViewH);
     // 监听contentOffset
     [_scrollview addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
