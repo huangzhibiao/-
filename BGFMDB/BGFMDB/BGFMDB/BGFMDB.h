@@ -20,7 +20,7 @@
 - (BOOL)isExistWithTableName:(NSString*)name;
 /**
  默认建立主键id
- 创建表(如果存在久不创建) keys 数据存放要求@[字段名称1,字段名称2]
+ 创建表(如果存在则不创建) keys 数据存放要求@[字段名称1,字段名称2]
  */
 -(BOOL)createTableWithTableName:(NSString*)name keys:(NSArray*)keys;
 /**

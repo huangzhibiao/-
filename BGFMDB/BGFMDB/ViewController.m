@@ -115,7 +115,18 @@
 }
 
 - (IBAction)selectAction:(id)sender {
-    NSArray* arr = [[BGFMDB intance] queryWithTableName:tableName];//查询语句
+    NSMutableArray* keys = [NSMutableArray array];
+    if (![_selectOne.text isEqualToString:@""]) {
+        [keys addObject:_selectOne.text];
+    }
+    if (![_selectTwo.text isEqualToString:@""]){
+        [keys addObject:_selectTwo.text];
+    }
+    if (![_selectThree.text isEqualToString:@""]){
+        [keys addObject:_selectThree.text];
+    }
+
+    NSArray* arr = [[BGFMDB intance] queryWithTableName:tableName keys:keys where:nil];//查询语句
     _datas = arr;
     [_tableview reloadData];
 }

@@ -64,7 +64,7 @@ static BGFMDB* BGFmdb;
 
 /**
  默认建立主键id
- 创建表(如果存在久不创建) keys 数据存放要求@[字段名称1,字段名称2]
+ 创建表(如果存在则不创建) keys 数据存放要求@[字段名称1,字段名称2]
  */
 -(BOOL)createTableWithTableName:(NSString*)name keys:(NSArray*)keys{
     if (name == nil) {
@@ -154,9 +154,10 @@ static BGFMDB* BGFmdb;
                 [SQL appendString:@","];
             }
         }
-        [SQL appendFormat:@" from %@ where ",name];
+        [SQL appendFormat:@" from %@",name];
         if ((where!=nil) && (where.count>0)){
             if(!(where.count%3)){
+                [SQL appendString:@" where "];
                 for(int i=0;i<where.count;i+=3){
                     [SQL appendFormat:@"%@%@'%@'",where[i],where[i+1],where[i+2]];
                     if (i != (where.count-3)) {
@@ -172,8 +173,8 @@ static BGFMDB* BGFmdb;
         // 2.遍历结果集
         while (rs.next) {
             NSMutableDictionary* dictM = [[NSMutableDictionary alloc] init];
-            for(int i=0;i<keys.count;i++){
-                dictM[keys[i]] = [rs stringForColumn:keys[i]];
+            for (int i=0;i<[[[rs columnNameToIndexMap] allKeys] count];i++) {
+                dictM[[rs columnNameForIndex:i]] = [rs stringForColumnIndex:i];
             }
             [arrM addObject:dictM];
         }
