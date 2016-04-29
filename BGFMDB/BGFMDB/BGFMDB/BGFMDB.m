@@ -48,8 +48,23 @@ static BGFMDB* BGFmdb;
 }
 
 /**
+ 数据库中是否存在表
+ */
+- (BOOL)isExistWithTableName:(NSString*)name{
+    if (name==nil){
+        NSLog(@"表名不能为空!");
+        return NO;
+    }
+    __block BOOL result;
+    [self.queue inDatabase:^(FMDatabase *db) {
+        result = [db tableExists:name];
+    }];
+    return result;
+}
+
+/**
  默认建立主键id
- 创建表 keys 数据存放要求@[字段名称1,字段名称2]
+ 创建表(如果存在久不创建) keys 数据存放要求@[字段名称1,字段名称2]
  */
 -(BOOL)createTableWithTableName:(NSString*)name keys:(NSArray*)keys{
     if (name == nil) {
