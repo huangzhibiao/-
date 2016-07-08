@@ -1,0 +1,561 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D7632E341D2DFCE300464D2A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7632E331D2DFCE300464D2A /* main.m */; };
+		D7632E371D2DFCE300464D2A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7632E361D2DFCE300464D2A /* AppDelegate.m */; };
+		D7632E3A1D2DFCE300464D2A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7632E391D2DFCE300464D2A /* ViewController.m */; };
+		D7632E3D1D2DFCE300464D2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7632E3B1D2DFCE300464D2A /* Main.storyboard */; };
+		D7632E3F1D2DFCE300464D2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7632E3E1D2DFCE300464D2A /* Assets.xcassets */; };
+		D7632E421D2DFCE300464D2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7632E401D2DFCE300464D2A /* LaunchScreen.storyboard */; };
+		D7632E4D1D2DFCE300464D2A /* topSilderBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7632E4C1D2DFCE300464D2A /* topSilderBarTests.m */; };
+		D7632E581D2DFCE300464D2A /* topSilderBarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7632E571D2DFCE300464D2A /* topSilderBarUITests.m */; };
+		D7632E681D2DFF6C00464D2A /* global.m in Sources */ = {isa = PBXBuildFile; fileRef = D7632E671D2DFF6C00464D2A /* global.m */; };
+		D7632E6C1D2E011900464D2A /* BGHomePageTopGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7632E6A1D2E011900464D2A /* BGHomePageTopGoodsCell.m */; };
+		D7632E6D1D2E011900464D2A /* BGHomePageTopGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7632E6B1D2E011900464D2A /* BGHomePageTopGoodsCell.xib */; };
+		D7632E701D2E25DF00464D2A /* BGTopSilderBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D7632E6F1D2E25DF00464D2A /* BGTopSilderBar.m */; };
+		D7632E741D2E277000464D2A /* BGTopSilderBarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7632E721D2E277000464D2A /* BGTopSilderBarCell.m */; };
+		D7632E751D2E277000464D2A /* BGTopSilderBarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7632E731D2E277000464D2A /* BGTopSilderBarCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D7632E491D2DFCE300464D2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7632E271D2DFCE200464D2A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7632E2E1D2DFCE200464D2A;
+			remoteInfo = topSilderBar;
+		};
+		D7632E541D2DFCE300464D2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7632E271D2DFCE200464D2A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7632E2E1D2DFCE200464D2A;
+			remoteInfo = topSilderBar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D7632E2F1D2DFCE200464D2A /* topSilderBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = topSilderBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7632E331D2DFCE300464D2A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D7632E351D2DFCE300464D2A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D7632E361D2DFCE300464D2A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D7632E381D2DFCE300464D2A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D7632E391D2DFCE300464D2A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D7632E3C1D2DFCE300464D2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D7632E3E1D2DFCE300464D2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D7632E411D2DFCE300464D2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D7632E431D2DFCE300464D2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7632E481D2DFCE300464D2A /* topSilderBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = topSilderBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7632E4C1D2DFCE300464D2A /* topSilderBarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = topSilderBarTests.m; sourceTree = "<group>"; };
+		D7632E4E1D2DFCE300464D2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7632E531D2DFCE300464D2A /* topSilderBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = topSilderBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7632E571D2DFCE300464D2A /* topSilderBarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = topSilderBarUITests.m; sourceTree = "<group>"; };
+		D7632E591D2DFCE300464D2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7632E661D2DFF6C00464D2A /* global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
+		D7632E671D2DFF6C00464D2A /* global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = global.m; sourceTree = "<group>"; };
+		D7632E691D2E011900464D2A /* BGHomePageTopGoodsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGHomePageTopGoodsCell.h; sourceTree = "<group>"; };
+		D7632E6A1D2E011900464D2A /* BGHomePageTopGoodsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGHomePageTopGoodsCell.m; sourceTree = "<group>"; };
+		D7632E6B1D2E011900464D2A /* BGHomePageTopGoodsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGHomePageTopGoodsCell.xib; sourceTree = "<group>"; };
+		D7632E6E1D2E25DF00464D2A /* BGTopSilderBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGTopSilderBar.h; sourceTree = "<group>"; };
+		D7632E6F1D2E25DF00464D2A /* BGTopSilderBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGTopSilderBar.m; sourceTree = "<group>"; };
+		D7632E711D2E277000464D2A /* BGTopSilderBarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGTopSilderBarCell.h; sourceTree = "<group>"; };
+		D7632E721D2E277000464D2A /* BGTopSilderBarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGTopSilderBarCell.m; sourceTree = "<group>"; };
+		D7632E731D2E277000464D2A /* BGTopSilderBarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGTopSilderBarCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D7632E2C1D2DFCE200464D2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7632E451D2DFCE300464D2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7632E501D2DFCE300464D2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D7632E261D2DFCE200464D2A = {
+			isa = PBXGroup;
+			children = (
+				D7632E651D2DFF4400464D2A /* BGTopSilderBar */,
+				D7632E311D2DFCE300464D2A /* topSilderBar */,
+				D7632E4B1D2DFCE300464D2A /* topSilderBarTests */,
+				D7632E561D2DFCE300464D2A /* topSilderBarUITests */,
+				D7632E301D2DFCE200464D2A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D7632E301D2DFCE200464D2A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D7632E2F1D2DFCE200464D2A /* topSilderBar.app */,
+				D7632E481D2DFCE300464D2A /* topSilderBarTests.xctest */,
+				D7632E531D2DFCE300464D2A /* topSilderBarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D7632E311D2DFCE300464D2A /* topSilderBar */ = {
+			isa = PBXGroup;
+			children = (
+				D7632E351D2DFCE300464D2A /* AppDelegate.h */,
+				D7632E361D2DFCE300464D2A /* AppDelegate.m */,
+				D7632E381D2DFCE300464D2A /* ViewController.h */,
+				D7632E391D2DFCE300464D2A /* ViewController.m */,
+				D7632E3B1D2DFCE300464D2A /* Main.storyboard */,
+				D7632E3E1D2DFCE300464D2A /* Assets.xcassets */,
+				D7632E401D2DFCE300464D2A /* LaunchScreen.storyboard */,
+				D7632E431D2DFCE300464D2A /* Info.plist */,
+				D7632E321D2DFCE300464D2A /* Supporting Files */,
+				D7632E691D2E011900464D2A /* BGHomePageTopGoodsCell.h */,
+				D7632E6A1D2E011900464D2A /* BGHomePageTopGoodsCell.m */,
+				D7632E6B1D2E011900464D2A /* BGHomePageTopGoodsCell.xib */,
+			);
+			path = topSilderBar;
+			sourceTree = "<group>";
+		};
+		D7632E321D2DFCE300464D2A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D7632E331D2DFCE300464D2A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D7632E4B1D2DFCE300464D2A /* topSilderBarTests */ = {
+			isa = PBXGroup;
+			children = (
+				D7632E4C1D2DFCE300464D2A /* topSilderBarTests.m */,
+				D7632E4E1D2DFCE300464D2A /* Info.plist */,
+			);
+			path = topSilderBarTests;
+			sourceTree = "<group>";
+		};
+		D7632E561D2DFCE300464D2A /* topSilderBarUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D7632E571D2DFCE300464D2A /* topSilderBarUITests.m */,
+				D7632E591D2DFCE300464D2A /* Info.plist */,
+			);
+			path = topSilderBarUITests;
+			sourceTree = "<group>";
+		};
+		D7632E651D2DFF4400464D2A /* BGTopSilderBar */ = {
+			isa = PBXGroup;
+			children = (
+				D7632E661D2DFF6C00464D2A /* global.h */,
+				D7632E671D2DFF6C00464D2A /* global.m */,
+				D7632E6E1D2E25DF00464D2A /* BGTopSilderBar.h */,
+				D7632E6F1D2E25DF00464D2A /* BGTopSilderBar.m */,
+				D7632E711D2E277000464D2A /* BGTopSilderBarCell.h */,
+				D7632E721D2E277000464D2A /* BGTopSilderBarCell.m */,
+				D7632E731D2E277000464D2A /* BGTopSilderBarCell.xib */,
+			);
+			path = BGTopSilderBar;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D7632E2E1D2DFCE200464D2A /* topSilderBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7632E5C1D2DFCE300464D2A /* Build configuration list for PBXNativeTarget "topSilderBar" */;
+			buildPhases = (
+				D7632E2B1D2DFCE200464D2A /* Sources */,
+				D7632E2C1D2DFCE200464D2A /* Frameworks */,
+				D7632E2D1D2DFCE200464D2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = topSilderBar;
+			productName = topSilderBar;
+			productReference = D7632E2F1D2DFCE200464D2A /* topSilderBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D7632E471D2DFCE300464D2A /* topSilderBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7632E5F1D2DFCE300464D2A /* Build configuration list for PBXNativeTarget "topSilderBarTests" */;
+			buildPhases = (
+				D7632E441D2DFCE300464D2A /* Sources */,
+				D7632E451D2DFCE300464D2A /* Frameworks */,
+				D7632E461D2DFCE300464D2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7632E4A1D2DFCE300464D2A /* PBXTargetDependency */,
+			);
+			name = topSilderBarTests;
+			productName = topSilderBarTests;
+			productReference = D7632E481D2DFCE300464D2A /* topSilderBarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D7632E521D2DFCE300464D2A /* topSilderBarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7632E621D2DFCE300464D2A /* Build configuration list for PBXNativeTarget "topSilderBarUITests" */;
+			buildPhases = (
+				D7632E4F1D2DFCE300464D2A /* Sources */,
+				D7632E501D2DFCE300464D2A /* Frameworks */,
+				D7632E511D2DFCE300464D2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7632E551D2DFCE300464D2A /* PBXTargetDependency */,
+			);
+			name = topSilderBarUITests;
+			productName = topSilderBarUITests;
+			productReference = D7632E531D2DFCE300464D2A /* topSilderBarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D7632E271D2DFCE200464D2A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Biao;
+				TargetAttributes = {
+					D7632E2E1D2DFCE200464D2A = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					D7632E471D2DFCE300464D2A = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = D7632E2E1D2DFCE200464D2A;
+					};
+					D7632E521D2DFCE300464D2A = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = D7632E2E1D2DFCE200464D2A;
+					};
+				};
+			};
+			buildConfigurationList = D7632E2A1D2DFCE200464D2A /* Build configuration list for PBXProject "topSilderBar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D7632E261D2DFCE200464D2A;
+			productRefGroup = D7632E301D2DFCE200464D2A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D7632E2E1D2DFCE200464D2A /* topSilderBar */,
+				D7632E471D2DFCE300464D2A /* topSilderBarTests */,
+				D7632E521D2DFCE300464D2A /* topSilderBarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D7632E2D1D2DFCE200464D2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7632E421D2DFCE300464D2A /* LaunchScreen.storyboard in Resources */,
+				D7632E6D1D2E011900464D2A /* BGHomePageTopGoodsCell.xib in Resources */,
+				D7632E3F1D2DFCE300464D2A /* Assets.xcassets in Resources */,
+				D7632E751D2E277000464D2A /* BGTopSilderBarCell.xib in Resources */,
+				D7632E3D1D2DFCE300464D2A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7632E461D2DFCE300464D2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7632E511D2DFCE300464D2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D7632E2B1D2DFCE200464D2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7632E681D2DFF6C00464D2A /* global.m in Sources */,
+				D7632E6C1D2E011900464D2A /* BGHomePageTopGoodsCell.m in Sources */,
+				D7632E3A1D2DFCE300464D2A /* ViewController.m in Sources */,
+				D7632E741D2E277000464D2A /* BGTopSilderBarCell.m in Sources */,
+				D7632E701D2E25DF00464D2A /* BGTopSilderBar.m in Sources */,
+				D7632E371D2DFCE300464D2A /* AppDelegate.m in Sources */,
+				D7632E341D2DFCE300464D2A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7632E441D2DFCE300464D2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7632E4D1D2DFCE300464D2A /* topSilderBarTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7632E4F1D2DFCE300464D2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7632E581D2DFCE300464D2A /* topSilderBarUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D7632E4A1D2DFCE300464D2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7632E2E1D2DFCE200464D2A /* topSilderBar */;
+			targetProxy = D7632E491D2DFCE300464D2A /* PBXContainerItemProxy */;
+		};
+		D7632E551D2DFCE300464D2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7632E2E1D2DFCE200464D2A /* topSilderBar */;
+			targetProxy = D7632E541D2DFCE300464D2A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D7632E3B1D2DFCE300464D2A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7632E3C1D2DFCE300464D2A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D7632E401D2DFCE300464D2A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7632E411D2DFCE300464D2A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D7632E5A1D2DFCE300464D2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D7632E5B1D2DFCE300464D2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D7632E5D1D2DFCE300464D2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = topSilderBar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangzhibiao.topSilderBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D7632E5E1D2DFCE300464D2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = topSilderBar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangzhibiao.topSilderBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D7632E601D2DFCE300464D2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = topSilderBarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangzhibiao.topSilderBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/topSilderBar.app/topSilderBar";
+			};
+			name = Debug;
+		};
+		D7632E611D2DFCE300464D2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = topSilderBarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangzhibiao.topSilderBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/topSilderBar.app/topSilderBar";
+			};
+			name = Release;
+		};
+		D7632E631D2DFCE300464D2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = topSilderBarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangzhibiao.topSilderBarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = topSilderBar;
+			};
+			name = Debug;
+		};
+		D7632E641D2DFCE300464D2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = topSilderBarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangzhibiao.topSilderBarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = topSilderBar;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D7632E2A1D2DFCE200464D2A /* Build configuration list for PBXProject "topSilderBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7632E5A1D2DFCE300464D2A /* Debug */,
+				D7632E5B1D2DFCE300464D2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7632E5C1D2DFCE300464D2A /* Build configuration list for PBXNativeTarget "topSilderBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7632E5D1D2DFCE300464D2A /* Debug */,
+				D7632E5E1D2DFCE300464D2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D7632E5F1D2DFCE300464D2A /* Build configuration list for PBXNativeTarget "topSilderBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7632E601D2DFCE300464D2A /* Debug */,
+				D7632E611D2DFCE300464D2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D7632E621D2DFCE300464D2A /* Build configuration list for PBXNativeTarget "topSilderBarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7632E631D2DFCE300464D2A /* Debug */,
+				D7632E641D2DFCE300464D2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D7632E271D2DFCE200464D2A /* Project object */;
+}
