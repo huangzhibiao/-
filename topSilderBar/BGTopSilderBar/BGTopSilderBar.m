@@ -12,6 +12,7 @@
 
 @interface BGTopSilderBar()<UICollectionViewDataSource, UICollectionViewDelegate>
 
+@property(nonatomic,strong)NSArray* items;
 @property(nonatomic,weak)UICollectionView* collectView;
 @property(nonatomic,weak)UIView* underline;
 
@@ -84,7 +85,24 @@ static NSString* ALCELLID = @"BGTopSilderBarCell";
     _currentBarIndex = toIndex;
 }
 
+/**
+ 设置外部内容的UICollectionView
+ */
+-(void)setContentCollectionView:(UIScrollView *)contentCollectionView{
+    _contentCollectionView = contentCollectionView;
+    // 监听contentOffset
+    [contentCollectionView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
+}
 
+/**
+ 重写removeFromSuperview
+ */
+-(void)removeFromSuperview{
+    [super removeFromSuperview];
+    //移除监听contentOffset
+    [_contentCollectionView removeObserver:self forKeyPath:@"contentOffset"];
+    _contentCollectionView = nil;
+}
 /**
  设置下划线的x轴距离
  */
@@ -150,9 +168,40 @@ static NSString* ALCELLID = @"BGTopSilderBarCell";
 #pragma mark - UIScrollViewDelegate
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [self scrollToWithIndexPath:indexPath];
-    if([_delegate respondsToSelector:@selector(SBcollectionView:didSelectItemAtIndex:)]){
-        [_delegate SBcollectionView:collectionView didSelectItemAtIndex:indexPath.row];
+    //[_contentCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+    [UIView animateWithDuration:0.5 animations:^{
+        [_contentCollectionView scrollRectToVisible:CGRectMake(indexPath.row*screenW,_contentCollectionView.frame.origin.y, _contentCollectionView.frame.size.width, _contentCollectionView.frame.size.height) animated:YES];
+    }];
+}
+
+#pragma mark 监听UIScrollView的contentOffset属性
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if (![@"contentOffset" isEqualToString:keyPath])return;
+    
+    int whichItem=(int)(_contentCollectionView.contentOffset.x/_contentCollectionView.frame.size.width+0.5);
+    CGSize titleSize = [global sizeWithText:_items[whichItem] font:BGFont(19.5) maxSize:CGSizeMake(screenW/itemNum, MAXFLOAT)];
+    if (whichItem != _currentBarIndex) {
+        [self setItemColorFromIndex:_currentBarIndex to:whichItem];
+        [UIView animateWithDuration:0.3 animations:^{
+            CGFloat X = _contentCollectionView.contentOffset.x/itemNum + (screenW/itemNum - titleSize.width)*0.5;
+            [self setUnderlineX:X];
+            [self setUnderlineWidth:titleSize.width];
+        }];
+        NSLog(@"item = %d",whichItem);
     }
+
+    if (_contentCollectionView.isDragging) {
+        CGFloat X = _contentCollectionView.contentOffset.x/itemNum + (screenW/itemNum - titleSize.width)*0.5;
+        [self setUnderlineX:X];
+    }else{
+        [UIView animateWithDuration:0.3 animations:^{
+          CGFloat  X = _contentCollectionView.contentOffset.x/itemNum + (screenW/itemNum - titleSize.width)*0.5;
+        [self setUnderlineX:X];
+        }];
+    }
+    _currentBarIndex = whichItem;
+    //NSLog(@"x=%f , y=%f",_collectView.contentOffset.x,_collectView.contentOffset.y);
 }
 
 @end

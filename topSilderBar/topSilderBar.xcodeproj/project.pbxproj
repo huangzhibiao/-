@@ -21,6 +21,10 @@
 		D7632E701D2E25DF00464D2A /* BGTopSilderBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D7632E6F1D2E25DF00464D2A /* BGTopSilderBar.m */; };
 		D7632E741D2E277000464D2A /* BGTopSilderBarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7632E721D2E277000464D2A /* BGTopSilderBarCell.m */; };
 		D7632E751D2E277000464D2A /* BGTopSilderBarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7632E731D2E277000464D2A /* BGTopSilderBarCell.xib */; };
+		D76EE3BE1D37322800ADEDD4 /* oneController.m in Sources */ = {isa = PBXBuildFile; fileRef = D76EE3BC1D37322800ADEDD4 /* oneController.m */; };
+		D76EE3BF1D37322800ADEDD4 /* oneController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76EE3BD1D37322800ADEDD4 /* oneController.xib */; };
+		D76EE3C31D37323400ADEDD4 /* twoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D76EE3C11D37323400ADEDD4 /* twoViewController.m */; };
+		D76EE3C41D37323400ADEDD4 /* twoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76EE3C21D37323400ADEDD4 /* twoViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,12 @@
 		D7632E711D2E277000464D2A /* BGTopSilderBarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGTopSilderBarCell.h; sourceTree = "<group>"; };
 		D7632E721D2E277000464D2A /* BGTopSilderBarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGTopSilderBarCell.m; sourceTree = "<group>"; };
 		D7632E731D2E277000464D2A /* BGTopSilderBarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGTopSilderBarCell.xib; sourceTree = "<group>"; };
+		D76EE3BB1D37322800ADEDD4 /* oneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oneController.h; sourceTree = "<group>"; };
+		D76EE3BC1D37322800ADEDD4 /* oneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = oneController.m; sourceTree = "<group>"; };
+		D76EE3BD1D37322800ADEDD4 /* oneController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = oneController.xib; sourceTree = "<group>"; };
+		D76EE3C01D37323400ADEDD4 /* twoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = twoViewController.h; sourceTree = "<group>"; };
+		D76EE3C11D37323400ADEDD4 /* twoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = twoViewController.m; sourceTree = "<group>"; };
+		D76EE3C21D37323400ADEDD4 /* twoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = twoViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +128,7 @@
 		D7632E311D2DFCE300464D2A /* topSilderBar */ = {
 			isa = PBXGroup;
 			children = (
+				D76EE3BA1D3731FF00ADEDD4 /* childViewcontroller */,
 				D7632E351D2DFCE300464D2A /* AppDelegate.h */,
 				D7632E361D2DFCE300464D2A /* AppDelegate.m */,
 				D7632E381D2DFCE300464D2A /* ViewController.h */,
@@ -172,6 +183,19 @@
 				D7632E731D2E277000464D2A /* BGTopSilderBarCell.xib */,
 			);
 			path = BGTopSilderBar;
+			sourceTree = "<group>";
+		};
+		D76EE3BA1D3731FF00ADEDD4 /* childViewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				D76EE3BB1D37322800ADEDD4 /* oneController.h */,
+				D76EE3BC1D37322800ADEDD4 /* oneController.m */,
+				D76EE3BD1D37322800ADEDD4 /* oneController.xib */,
+				D76EE3C01D37323400ADEDD4 /* twoViewController.h */,
+				D76EE3C11D37323400ADEDD4 /* twoViewController.m */,
+				D76EE3C21D37323400ADEDD4 /* twoViewController.xib */,
+			);
+			path = childViewcontroller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,8 +303,10 @@
 			files = (
 				D7632E421D2DFCE300464D2A /* LaunchScreen.storyboard in Resources */,
 				D7632E6D1D2E011900464D2A /* BGHomePageTopGoodsCell.xib in Resources */,
+				D76EE3BF1D37322800ADEDD4 /* oneController.xib in Resources */,
 				D7632E3F1D2DFCE300464D2A /* Assets.xcassets in Resources */,
 				D7632E751D2E277000464D2A /* BGTopSilderBarCell.xib in Resources */,
+				D76EE3C41D37323400ADEDD4 /* twoViewController.xib in Resources */,
 				D7632E3D1D2DFCE300464D2A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,7 +332,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D76EE3BE1D37322800ADEDD4 /* oneController.m in Sources */,
 				D7632E681D2DFF6C00464D2A /* global.m in Sources */,
+				D76EE3C31D37323400ADEDD4 /* twoViewController.m in Sources */,
 				D7632E6C1D2E011900464D2A /* BGHomePageTopGoodsCell.m in Sources */,
 				D7632E3A1D2DFCE300464D2A /* ViewController.m in Sources */,
 				D7632E741D2E277000464D2A /* BGTopSilderBarCell.m in Sources */,
@@ -538,6 +566,7 @@
 				D7632E5E1D2DFCE300464D2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D7632E5F1D2DFCE300464D2A /* Build configuration list for PBXNativeTarget "topSilderBarTests" */ = {
 			isa = XCConfigurationList;
@@ -546,6 +575,7 @@
 				D7632E611D2DFCE300464D2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D7632E621D2DFCE300464D2A /* Build configuration list for PBXNativeTarget "topSilderBarUITests" */ = {
 			isa = XCConfigurationList;
@@ -554,6 +584,7 @@
 				D7632E641D2DFCE300464D2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -17,16 +17,9 @@
 //设置一页标题item有几个,默认6个
 #define itemNum 6
 
-@protocol BGTopSilderBarDelegate <NSObject>
-
--(void)SBcollectionView:(UICollectionView *)SBcollectionView didSelectItemAtIndex:(NSInteger)index;
-
-@end
-
 @interface BGTopSilderBar : UIView
 
-@property(nonatomic,strong)NSArray* items;
-@property(nonatomic,weak)id<BGTopSilderBarDelegate> delegate;
+@property(nonatomic,weak)UIScrollView* contentCollectionView;
 @property(nonatomic,assign)CGFloat underlineX;//下划线的x轴距离
 @property(nonatomic,assign)CGFloat underlineWidth;//下划线的宽度
 
