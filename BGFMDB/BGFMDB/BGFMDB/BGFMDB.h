@@ -51,4 +51,8 @@
  删除表
  */
 -(BOOL)dropTable:(NSString*)name;
+/**
+ 存储一个对象
+ */
+-(void)saveObject:(id)object;
 @end

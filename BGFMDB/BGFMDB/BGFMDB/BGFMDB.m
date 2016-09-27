@@ -312,4 +312,12 @@ static BGFMDB* BGFmdb;
     return result;
 }
 
+/**
+ 存储一个对象
+ */
+-(void)saveObject:(id)object{
+    Class class = [object class];
+    NSLog(@"类名 = %@",class);
+}
+
 @end

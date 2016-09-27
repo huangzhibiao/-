@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "BGFMDB/BGFMDB.h"
+#import "people.h"
 
 #define tableName @"student"
 
@@ -54,7 +55,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     //[self initTableview];
-    [test testLog];
+    //[test testLog];
+    people* p = [[people alloc] init];
+    [[BGFMDB intance] saveObject:p];
 }
 
 -(void)initTableview{
