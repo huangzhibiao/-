@@ -54,10 +54,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    //[self initTableview];
-    //[test testLog];
+    [self initTableview];
+    
+    //存储对象使用示例
     people* p = [[people alloc] init];
-    [[BGFMDB intance] saveObject:p];
+    p.name = @"马坤";
+    p.num = @(8);
+    p.age = 12;
+    [[BGFMDB intance] saveObject:p complete:^(BOOL isSuccess){}];
+    //[[BGFMDB intance] updateWithClass:[people class] valueDict:@{@"name":@"fuck"} where:nil complete:^(BOOL isSuccess){}];
+    //[[BGFMDB intance] deleteWithClass:[people class] where:@[@"num",@"=",@"8"] complete:^(BOOL isSuccess){}];
+    /*[[BGFMDB intance] clearWithClass:[people class] complete:^(BOOL isSuccess) {
+        if (isSuccess) {
+            NSLog(@"清理成功");
+        }else{
+            NSLog(@"清理失败");
+        }
+    }];*/
+    /*[[BGFMDB intance] dropWithClass:[people class] complete:^(BOOL isSuccess) {
+        if (isSuccess) {
+            NSLog(@"删除类表成功");
+        }else{
+            NSLog(@"删除类表失败");
+        }
+    }];*/
+    [[BGFMDB intance] queryObjectWithClass:[people class] keys:nil where:nil complete:^(NSArray *array) {
+        for(people* p in array){
+            NSLog(@"查询结果  name = %@,num = %@,age = %d",p.name,p.num,p.age);
+        }
+    }];
+    
 }
 
 -(void)initTableview{
@@ -78,23 +104,25 @@
     }
     //默认建立主键id
     //keys 数据存放要求@[字段名称1,字段名称2]
-    BOOL result = [[BGFMDB intance] createTableWithTableName:tableName keys:keys];//建表语句
-    if (result) {
-        NSLog(@"创表成功");
-    } else {
-        NSLog(@"创表失败");
-    }
+    [[BGFMDB intance] createTableWithTableName:tableName keys:keys complete:^(BOOL isSuccess) {
+        if (isSuccess) {
+            NSLog(@"创表成功");
+        } else {
+            NSLog(@"创表失败");
+        }
+    }];//建表语句
 }
 
 - (IBAction)dropAction:(id)sender {
-    BOOL result = [[BGFMDB intance] dropTable:tableName];
-    if (result) {
-        NSLog(@"删表成功");
-        _datas = nil;
-        [_tableview reloadData];
-    } else {
-        NSLog(@"删表失败");
-    }
+    [[BGFMDB intance] dropTable:tableName complete:^(BOOL isSuccess) {
+        if (isSuccess) {
+            NSLog(@"删表成功");
+            _datas = nil;
+            [_tableview reloadData];
+        } else {
+            NSLog(@"删表失败");
+        }
+    }];
 }
 
 - (IBAction)insertAction:(id)sender {
@@ -109,13 +137,14 @@
         dictM[_createThree.text] = _insertThree.text;
     }
     
-    BOOL result = [[BGFMDB intance] insertIntoTableName:tableName Dict:dictM];//插入语句
-    if (result) {
-        NSLog(@"插入成功");
-        [self selectAction:nil];
-    } else {
-        NSLog(@"插入失败");
-    }
+    [[BGFMDB intance] insertIntoTableName:tableName Dict:dictM complete:^(BOOL isSuccess) {
+        if (isSuccess) {
+            NSLog(@"插入成功");
+            [self selectAction:nil];
+        } else {
+            NSLog(@"插入失败");
+        }
+    }];//插入语句
 }
 
 - (IBAction)selectAction:(id)sender {
@@ -130,9 +159,12 @@
         [keys addObject:_selectThree.text];
     }
 
-    NSArray* arr = [[BGFMDB intance] queryWithTableName:tableName keys:keys where:nil];//查询语句
-    _datas = arr;
-    [_tableview reloadData];
+    [[BGFMDB intance] queryWithTableName:tableName keys:keys where:nil complete:^(NSArray *array) {
+        _datas = array;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_tableview reloadData];
+        });
+    }];//查询语句
 }
 
 - (IBAction)updateAction:(id)sender {
@@ -148,13 +180,14 @@
     }
     //where是条件数组 形式 @[@"key",@"=",@"value",@"key",@">=",@"value"]
     //没有过滤条件时,where填nil
-    BOOL result = [[BGFMDB intance] updateWithTableName:tableName valueDict:valueDict where:nil];//更新语句
-    if (result) {
-        NSLog(@"更新成功");
-        [self selectAction:nil];
-    } else {
-        NSLog(@"更新失败");
-    }
+    [[BGFMDB intance] updateWithTableName:tableName valueDict:valueDict where:nil complete:^(BOOL isSuccess) {
+        if (isSuccess) {
+            NSLog(@"更新成功");
+            [self selectAction:nil];
+        } else {
+            NSLog(@"更新失败");
+        }
+    }];//更新语句
 }
 
 - (IBAction)deleteAction:(id)sender {
@@ -176,13 +209,15 @@
         [where addObject:_deleteThree.text];
     }
 
-    BOOL result = [[BGFMDB intance] deleteWithTableName:tableName where:where];//删除语句
-    if (result) {
-        NSLog(@"删除成功");
-        [self selectAction:nil];
-    } else {
-        NSLog(@"删除失败");
-    }
+    [[BGFMDB intance] deleteWithTableName:tableName where:where complete:^(BOOL isSuccess) {
+        if (isSuccess) {
+            NSLog(@"删除成功");
+            [self selectAction:nil];
+        } else {
+            NSLog(@"删除失败");
+        }
+    }];//删除语句
+    
 }
 
 - (IBAction)hideKeyBoard:(id)sender {
@@ -209,6 +244,10 @@
     }
     cell.textLabel.text = data;
     return cell;
+}
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    [self.view endEditing:YES];
 }
 
 @end
